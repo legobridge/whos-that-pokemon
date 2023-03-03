@@ -139,11 +139,11 @@ def fc_infer(fact, rule):
 
     if fact.statement.predicate[0] != '~':
         bindings = False
-        matched_clause = None
-        for lhs_matching_clause in rule.lhs:
-            bindings = match(fact.statement, lhs_matching_clause)
+        matched_statement = None
+        for lhs_matching_statement in rule.lhs:
+            bindings = match(fact.statement, lhs_matching_statement)
             if bindings:
-                matched_clause = lhs_matching_clause
+                matched_statement = lhs_matching_statement
                 break
         if bindings:
             if len(rule.lhs) == 1:
@@ -153,17 +153,17 @@ def fc_infer(fact, rule):
             else:
                 # New rule can be inferred
                 new_rule_lhs = []
-                for lhs_clause in rule.lhs:
-                    if lhs_clause != matched_clause:
-                        new_rule_lhs.append(instantiate(lhs_clause, bindings))
+                for lhs_statement in rule.lhs:
+                    if lhs_statement != matched_statement:
+                        new_rule_lhs.append(instantiate(lhs_statement, bindings))
                 new_rule_rhs = instantiate(rule.rhs, bindings)
                 new_rule = Rule([new_rule_lhs, new_rule_rhs])
                 new_rules.append(new_rule)
     else:
         bindings = False
         statement_inverted = invert(fact.statement)
-        for lhs_matching_clause in rule.lhs:
-            bindings = match(statement_inverted, lhs_matching_clause)
+        for lhs_matching_statement in rule.lhs:
+            bindings = match(statement_inverted, lhs_matching_statement)
             if bindings:
                 break
         if not bindings:

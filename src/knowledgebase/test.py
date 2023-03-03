@@ -10,7 +10,7 @@ class KBTest(unittest.TestCase):
         self.KB = KnowledgeBase([], [], [])
 
         # Assert starter rules
-        kb_file = '../../data/pokemon_kb.txt'
+        kb_file = '../../data/pokemon_test_kb.txt'
         data = read.read_tokenize(kb_file)
         for item in data:
             if isinstance(item, Fact) or isinstance(item, Rule):
