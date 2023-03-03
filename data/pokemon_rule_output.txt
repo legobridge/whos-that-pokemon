@@ -14,7 +14,7 @@
 
 
 -------Gen Introduced In List-------
-['isIntroducedIn Gen1', 'isIntroducedIn Gen2']
+['wasIntroducedIn Gen1', 'wasIntroducedIn Gen2']
 
 
 
@@ -34,7 +34,7 @@
 
 
 -------Primary Color-------
-['hasPrimaryColor Green', 'hasPrimaryColor Red', 'hasPrimaryColor Blue', 'hasPrimaryColor White', 'hasPrimaryColor Brown', 'hasPrimaryColor Yellow', 'hasPrimaryColor Purple', 'hasPrimaryColor Pink', 'hasPrimaryColor Gray', 'hasPrimaryColor Black']
+['isColot Green', 'isColot Red', 'isColot Blue', 'isColot White', 'isColot Brown', 'isColot Yellow', 'isColot Purple', 'isColot Pink', 'isColot Gray', 'isColot Black']
 
 
 
@@ -43,105 +43,87 @@
 
 
 
-normal_attack_effectiveness
---- how effective againstNormal ---
+--- how effective is Normal attack against this pokemon ---
 ['howEffectiveNormal normal', 'howEffectiveNormal notVeryEffective']
 
 
 
-fire_attack_effectiveness
---- how effective againstFire ---
+--- how effective is Fire attack against this pokemon ---
 ['howEffectiveFire superEffective', 'howEffectiveFire notVeryEffective', 'howEffectiveFire normal']
 
 
 
-water_attack_effectiveness
---- how effective againstWater ---
+--- how effective is Water attack against this pokemon ---
 ['howEffectiveWater notVeryEffective', 'howEffectiveWater superEffective', 'howEffectiveWater normal']
 
 
 
-electric_attack_effectiveness
---- how effective againstElectric ---
+--- how effective is Electric attack against this pokemon ---
 ['howEffectiveElectric notVeryEffective', 'howEffectiveElectric normal', 'howEffectiveElectric superEffective']
 
 
 
-grass_attack_effectiveness
---- how effective againstGrass ---
+--- how effective is Grass attack against this pokemon ---
 ['howEffectiveGrass superEffective', 'howEffectiveGrass notVeryEffective', 'howEffectiveGrass superEffective']
 
 
 
-ice_attack_effectiveness
---- how effective againstIce ---
+--- how effective is Ice attack against this pokemon ---
 ['howEffectiveIce superEffective', 'howEffectiveIce notVeryEffective', 'howEffectiveIce normal']
 
 
 
-fighting_attack_effectiveness
---- how effective againstFighting ---
+--- how effective is Fighting attack against this pokemon ---
 ['howEffectiveFighting notVeryEffective', 'howEffectiveFighting normal', 'howEffectiveFighting superEffective']
 
 
 
-poison_attack_effectiveness
---- how effective againstPoison ---
+--- how effective is Poison attack against this pokemon ---
 ['howEffectivePoison normal', 'howEffectivePoison notVeryEffective', 'howEffectivePoison superEffective']
 
 
 
-ground_attack_effectiveness
---- how effective againstGround ---
+--- how effective is Ground attack against this pokemon ---
 ['howEffectiveGround normal', 'howEffectiveGround superEffective', 'howEffectiveGround notVeryEffective']
 
 
 
-fly_attack_effectiveness
---- how effective againstFly ---
+--- how effective is Fly attack against this pokemon ---
 ['howEffectiveFly superEffective', 'howEffectiveFly normal', 'howEffectiveFly notVeryEffective']
 
 
 
-psychic_attack_effectiveness
---- how effective againstPsychic ---
+--- how effective is Psychic attack against this pokemon ---
 ['howEffectivePsychic superEffective', 'howEffectivePsychic normal', 'howEffectivePsychic notVeryEffective']
 
 
 
-bug_attack_effectiveness
---- how effective againstBug ---
+--- how effective is Bug attack against this pokemon ---
 ['howEffectiveBug normal', 'howEffectiveBug notVeryEffective', 'howEffectiveBug superEffective']
 
 
 
-rock_attack_effectiveness
---- how effective againstRock ---
+--- how effective is Rock attack against this pokemon ---
 ['howEffectiveRock normal', 'howEffectiveRock superEffective', 'howEffectiveRock notVeryEffective']
 
 
 
-ghost_attack_effectiveness
---- how effective againstGhost ---
+--- how effective is Ghost attack against this pokemon ---
 ['howEffectiveGhost normal', 'howEffectiveGhost superEffective', 'howEffectiveGhost notVeryEffective']
 
 
 
-dragon_attack_effectiveness
---- how effective againstDragon ---
+--- how effective is Dragon attack against this pokemon ---
 ['howEffectiveDragon normal', 'howEffectiveDragon notVeryEffective', 'howEffectiveDragon superEffective']
 
 
 
-dark_attack_effectiveness
---- how effective againstDark ---
+--- how effective is Dark attack against this pokemon ---
 ['howEffectiveDark normal', 'howEffectiveDark notVeryEffective', 'howEffectiveDark superEffective']
 
 
 
-steel_attack_effectiveness
---- how effective againstSteel ---
+--- how effective is Steel attack against this pokemon ---
 ['howEffectiveSteel normal', 'howEffectiveSteel notVeryEffective', 'howEffectiveSteel superEffective']
-
 
 
