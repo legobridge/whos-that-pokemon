@@ -49,6 +49,36 @@ class KBTest(unittest.TestCase):
         answer = self.KB.kb_ask(ask1)
         self.assertEqual(str(answer[0]), "?X : Squirtle")
 
+    def test3(self):
+
+        fact1 = read.parse_input("fact: (~canEvolve)")
+        fact2 = read.parse_input("fact: (isColor Yellow)")
+        fact3 = read.parse_input("fact: (isType Electric)")
+        fact4 = read.parse_input("fact: (isLegendary)")
+        self.KB.kb_assert(fact1)
+        self.KB.kb_assert(fact2)
+        self.KB.kb_assert(fact3)
+        self.KB.kb_assert(fact4)
+
+        ask1 = read.parse_input("fact: (isPokemon ?X)")
+        answer = self.KB.kb_ask(ask1)
+        self.assertEqual(str(answer[0]), "?X : Zapdos")
+
+    def test4(self):
+
+        fact1 = read.parse_input("fact: (~isLegendary)")
+        fact2 = read.parse_input("fact: (canEvolve)")
+        fact3 = read.parse_input("fact: (isType Water)")
+        fact4 = read.parse_input("fact: (isColor Blue)")
+        self.KB.kb_assert(fact1)
+        self.KB.kb_assert(fact2)
+        self.KB.kb_assert(fact3)
+        self.KB.kb_assert(fact4)
+
+        ask1 = read.parse_input("fact: (isPokemon ?X)")
+        answer = self.KB.kb_ask(ask1)
+        self.assertEqual(str(answer[0]), "?X : Squirtle")
+
     def test10(self):
         KB = KnowledgeBase([], [], [])
 

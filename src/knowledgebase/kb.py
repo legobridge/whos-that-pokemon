@@ -77,7 +77,10 @@ class KnowledgeBase(object):
                     new_rules_all += new_rules
 
                 # replace the old rules with new ones that are consistent with the new fact
-                self.rules = self.permanent_rules + new_rules_all
+                self.rules = new_rules_all
+                # re-add permanent rules
+                for permanent_rule in self.permanent_rules:
+                    self.kb_add(permanent_rule)
                 # add all newly derived facts to the KB
                 for new_fact in new_facts_all:
                     self.kb_add(new_fact)
@@ -133,8 +136,15 @@ def fc_infer(fact, rule):
 
     new_facts = []
     new_rules = []
-    for lhs_matching_clause in rule.lhs:
-        bindings = match(fact.statement, lhs_matching_clause)
+
+    if fact.statement.predicate[0] != '~':
+        bindings = False
+        matched_clause = None
+        for lhs_matching_clause in rule.lhs:
+            bindings = match(fact.statement, lhs_matching_clause)
+            if bindings:
+                matched_clause = lhs_matching_clause
+                break
         if bindings:
             if len(rule.lhs) == 1:
                 # New fact can be inferred
@@ -144,12 +154,20 @@ def fc_infer(fact, rule):
                 # New rule can be inferred
                 new_rule_lhs = []
                 for lhs_clause in rule.lhs:
-                    if lhs_clause != lhs_matching_clause:
+                    if lhs_clause != matched_clause:
                         new_rule_lhs.append(instantiate(lhs_clause, bindings))
                 new_rule_rhs = instantiate(rule.rhs, bindings)
                 new_rule = Rule([new_rule_lhs, new_rule_rhs])
                 new_rules.append(new_rule)
-            break
+    else:
+        bindings = False
+        statement_inverted = invert(fact.statement)
+        for lhs_matching_clause in rule.lhs:
+            bindings = match(statement_inverted, lhs_matching_clause)
+            if bindings:
+                break
+        if not bindings:
+            # if the inverted fact did not match with this rule, then we want to retain this rule
+            new_rules.append(rule)
 
     return new_facts, new_rules
-

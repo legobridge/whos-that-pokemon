@@ -1,5 +1,6 @@
 import logical_classes as lc
 
+
 def is_var(var):
     """Check whether an element is a variable (either instance of Variable, 
         instance of Term (where .term is a Variable) or a string starting with 
@@ -18,6 +19,11 @@ def is_var(var):
 
     return isinstance(var, lc.Variable)
 
+
+def invert(statement):
+    return lc.Statement([statement.predicate[1:]] + statement.terms)
+
+
 def match(state1, state2, bindings=None):
     """Match two statements and return the associated bindings or False if there
         is no binding
@@ -30,11 +36,14 @@ def match(state1, state2, bindings=None):
     Returns:
         Bindings|False: either associated bindings or no match found
     """
-    if len(state1.terms) != len(state2.terms) or state1.predicate != state2.predicate:
+    if len(state1.terms) != len(state2.terms):
+        return False
+    if state1.predicate != state2.predicate:
         return False
     if not bindings:
         bindings = lc.Bindings()
     return match_recursive(state1.terms, state2.terms, bindings)
+
 
 def match_recursive(terms1, terms2, bindings):  # recursive...
     """Recursive helper for match
@@ -59,6 +68,7 @@ def match_recursive(terms1, terms2, bindings):  # recursive...
         return False
     return match_recursive(terms1[1:], terms2[1:], bindings)
 
+
 def instantiate(statement, bindings):
     """Generate Statement from given statement and bindings. Constructed statement
         has bound values for variables if they exist in bindings.
@@ -67,6 +77,7 @@ def instantiate(statement, bindings):
         statement (Statement): statement to generate new statement from
         bindings (Bindings): bindings to substitute into statement
     """
+
     def handle_term(term):
         if is_var(term):
             bound_value = bindings.bound_to(term.term)
@@ -76,6 +87,7 @@ def instantiate(statement, bindings):
 
     new_terms = [handle_term(t) for t in statement.terms]
     return lc.Statement([statement.predicate] + new_terms)
+
 
 def factq(element):
     """Check if element is a fact
@@ -87,6 +99,7 @@ def factq(element):
         bool
     """
     return isinstance(element, lc.Fact)
+
 
 def printv(message, level, verbose, data=[]):
     """Prints given message formatted with data if passed in verbose flag is greater than level
