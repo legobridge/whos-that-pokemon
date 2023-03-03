@@ -1,0 +1,3 @@
+rule: ((isColor Red)) -> (isPrimaryColor)
+rule: ((isColor Yellow)) -> (isPrimaryColor)
+rule: ((isColor Blue)) -> (isPrimaryColor)
