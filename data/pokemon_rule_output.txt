@@ -1,0 +1,147 @@
+-------Type 1 List-------
+['isType Grass', 'isType Fire', 'isType Water', 'isType Bug', 'isType Normal', 'isType Poison', 'isType Electric', 'isType Ground', 'isType Fairy', 'isType Fighting', 'isType Psychic', 'isType Rock', 'isType Ghost', 'isType Ice', 'isType Dragon', 'isType Dark', 'isType Steel']
+
+
+
+-------Type 2 List-------
+['isType Poison', 'isType Flying', 'isType Ground', 'isType Fairy', 'isType Grass', 'isType Fighting', 'isType Psychic', 'isType Steel', 'isType Ice', 'isType Rock', 'isType Water', 'isType Electric', 'isType Fire', 'isType Dragon', 'isType Dark']
+
+
+
+-------Genus List-------
+['isGenus Seed', 'isGenus Lizard', 'isGenus Flame', 'isGenus TinyTurtle', 'isGenus Turtle', 'isGenus Shellfish', 'isGenus Worm', 'isGenus Cocoon', 'isGenus Butterfly', 'isGenus HairyBug', 'isGenus PoisonBee', 'isGenus TinyBird', 'isGenus Bird', 'isGenus Mouse', 'isGenus Beak', 'isGenus Snake', 'isGenus Cobra', 'isGenus PoisonPin', 'isGenus Drill', 'isGenus Fairy', 'isGenus Fox', 'isGenus Balloon', 'isGenus Bat', 'isGenus Weed', 'isGenus Flower', 'isGenus Mushroom', 'isGenus Insect', 'isGenus PoisonMoth', 'isGenus Mole', 'isGenus ScratchCat', 'isGenus ClassyCat', 'isGenus Duck', 'isGenus PigMonkey', 'isGenus Puppy', 'isGenus Legendary', 'isGenus Tadpole', 'isGenus Psi', 'isGenus Superpower', 'isGenus Flycatcher', 'isGenus Jellyfish', 'isGenus Rock', 'isGenus Megaton', 'isGenus FireHorse', 'isGenus Dopey', 'isGenus HermitCrab', 'isGenus Magnet', 'isGenus WildDuck', 'isGenus TwinBird', 'isGenus TripleBird', 'isGenus SeaLion', 'isGenus Sludge', 'isGenus Bivalve', 'isGenus Gas', 'isGenus Shadow', 'isGenus RockSnake', 'isGenus Hypnosis', 'isGenus RiverCrab', 'isGenus Pincer', 'isGenus Ball', 'isGenus Egg', 'isGenus Coconut', 'isGenus Lonely', 'isGenus BoneKeeper', 'isGenus Kicking', 'isGenus Punching', 'isGenus Licking', 'isGenus PoisonGas', 'isGenus Spikes', 'isGenus Vine', 'isGenus Parent', 'isGenus Dragon', 'isGenus Goldfish', 'isGenus StarShape', 'isGenus Mysterious', 'isGenus Barrier', 'isGenus Mantis', 'isGenus HumanShape', 'isGenus Electric', 'isGenus Spitfire', 'isGenus StagBeetle', 'isGenus WildBull', 'isGenus Fish', 'isGenus Atrocious', 'isGenus Transport', 'isGenus Transform', 'isGenus Evolution', 'isGenus BubbleJet', 'isGenus Lightning', 'isGenus Virtual', 'isGenus Spiral', 'isGenus Fossil', 'isGenus Sleeping', 'isGenus Freeze', 'isGenus Genetic', 'isGenus NewSpecies', 'isGenus Leaf', 'isGenus Herb', 'isGenus FireMouse', 'isGenus Volcano', 'isGenus BigJaw', 'isGenus Scout', 'isGenus LongBody', 'isGenus Owl', 'isGenus FiveStar', 'isGenus StringSpit', 'isGenus LongLeg', 'isGenus Angler', 'isGenus Light', 'isGenus TinyMouse', 'isGenus SpikeBall', 'isGenus Happiness', 'isGenus Mystic', 'isGenus Wool', 'isGenus AquaMouse', 'isGenus AquaRabbit', 'isGenus Imitation', 'isGenus Frog', 'isGenus Cottonweed', 'isGenus LongTail', 'isGenus Sun', 'isGenus ClearWing', 'isGenus WaterFish', 'isGenus Moonlight', 'isGenus Darkness', 'isGenus Royal', 'isGenus Screech', 'isGenus Symbol', 'isGenus Patient', 'isGenus LongNeck', 'isGenus Bagworm', 'isGenus LandSnake', 'isGenus FlyScorpion', 'isGenus IronSnake', 'isGenus Mold', 'isGenus SingleHorn', 'isGenus SharpClaw', 'isGenus LittleBear', 'isGenus Hibernator', 'isGenus Lava', 'isGenus Pig', 'isGenus Swine', 'isGenus Coral', 'isGenus Jet', 'isGenus Delivery', 'isGenus Kite', 'isGenus ArmorBird', 'isGenus Dark', 'isGenus LongNose', 'isGenus Armor', 'isGenus BigHorn', 'isGenus Painter', 'isGenus Scuffle', 'isGenus Handstand', 'isGenus Kiss', 'isGenus LiveCoal', 'isGenus MilkCow', 'isGenus Thunder', 'isGenus Aurora', 'isGenus RockSkin', 'isGenus HardShell', 'isGenus Diving', 'isGenus Rainbow', 'isGenus TimeTravel']
+
+
+
+-------Gen Introduced In List-------
+['isIntroducedIn Gen1', 'isIntroducedIn Gen2']
+
+
+
+-------Legendary or Not-------
+['isLegendary']
+
+
+
+-------Can Evolve-------
+['canEvolve']
+
+
+
+-------Evolves From-------
+['evolvesFrom Bulbasaur', 'evolvesFrom Ivysaur', 'evolvesFrom Charmander', 'evolvesFrom Charmeleon', 'evolvesFrom Squirtle', 'evolvesFrom Wartortle', 'evolvesFrom Caterpie', 'evolvesFrom Metapod', 'evolvesFrom Weedle', 'evolvesFrom Kakuna', 'evolvesFrom Pidgey', 'evolvesFrom Pidgeotto', 'evolvesFrom Rattata', 'evolvesFrom Spearow', 'evolvesFrom Ekans', 'evolvesFrom Pichu', 'evolvesFrom Pikachu', 'evolvesFrom Sandshrew', 'evolvesFrom Nidoran F', 'evolvesFrom Nidorina', 'evolvesFrom Nidoran M', 'evolvesFrom Nidorino', 'evolvesFrom Cleffa', 'evolvesFrom Clefairy', 'evolvesFrom Vulpix', 'evolvesFrom Igglybuff', 'evolvesFrom Jigglypuff', 'evolvesFrom Zubat', 'evolvesFrom Oddish', 'evolvesFrom Gloom', 'evolvesFrom Paras', 'evolvesFrom Venonat', 'evolvesFrom Diglett', 'evolvesFrom Meowth', 'evolvesFrom Psyduck', 'evolvesFrom Mankey', 'evolvesFrom Growlithe', 'evolvesFrom Poliwag', 'evolvesFrom Poliwhirl', 'evolvesFrom Abra', 'evolvesFrom Kadabra', 'evolvesFrom Machop', 'evolvesFrom Machoke', 'evolvesFrom Bellsprout', 'evolvesFrom Weepinbell', 'evolvesFrom Tentacool', 'evolvesFrom Geodude', 'evolvesFrom Graveler', 'evolvesFrom Ponyta', 'evolvesFrom Slowpoke', 'evolvesFrom Magnemite', 'evolvesFrom Doduo', 'evolvesFrom Seel', 'evolvesFrom Grimer', 'evolvesFrom Shellder', 'evolvesFrom Gastly', 'evolvesFrom Haunter', 'evolvesFrom Drowzee', 'evolvesFrom Krabby', 'evolvesFrom Voltorb', 'evolvesFrom Exeggcute', 'evolvesFrom Cubone', 'evolvesFrom Tyrogue', 'evolvesFrom Koffing', 'evolvesFrom Rhyhorn', 'evolvesFrom Happiny', 'evolvesFrom Horsea', 'evolvesFrom Goldeen', 'evolvesFrom Staryu', 'evolvesFrom Mime Jr', 'evolvesFrom Smoochum', 'evolvesFrom Elekid', 'evolvesFrom Magby', 'evolvesFrom Magikarp', 'evolvesFrom Eevee', 'evolvesFrom Omanyte', 'evolvesFrom Kabuto', 'evolvesFrom Munchlax', 'evolvesFrom Dratini', 'evolvesFrom Dragonair', 'evolvesFrom Chikorita', 'evolvesFrom Bayleef', 'evolvesFrom Cyndaquil', 'evolvesFrom Quilava', 'evolvesFrom Totodile', 'evolvesFrom Croconaw', 'evolvesFrom Sentret', 'evolvesFrom Hoothoot', 'evolvesFrom Ledyba', 'evolvesFrom Spinarak', 'evolvesFrom Golbat', 'evolvesFrom Chinchou', 'evolvesFrom Togepi', 'evolvesFrom Natu', 'evolvesFrom Mareep', 'evolvesFrom Flaaffy', 'evolvesFrom Azurill', 'evolvesFrom Marill', 'evolvesFrom Bonsly', 'evolvesFrom Hoppip', 'evolvesFrom Skiploom', 'evolvesFrom Sunkern', 'evolvesFrom Wooper', 'evolvesFrom Wynaut', 'evolvesFrom Pineco', 'evolvesFrom Onix', 'evolvesFrom Snubbull', 'evolvesFrom Scyther', 'evolvesFrom Teddiursa', 'evolvesFrom Slugma', 'evolvesFrom Swinub', 'evolvesFrom Remoraid', 'evolvesFrom Mantyke', 'evolvesFrom Houndour', 'evolvesFrom Seadra', 'evolvesFrom Phanpy', 'evolvesFrom Porygon', 'evolvesFrom Chansey', 'evolvesFrom Larvitar', 'evolvesFrom Pupitar']
+
+
+
+-------Primary Color-------
+['hasPrimaryColor Green', 'hasPrimaryColor Red', 'hasPrimaryColor Blue', 'hasPrimaryColor White', 'hasPrimaryColor Brown', 'hasPrimaryColor Yellow', 'hasPrimaryColor Purple', 'hasPrimaryColor Pink', 'hasPrimaryColor Gray', 'hasPrimaryColor Black']
+
+
+
+-------Shape-------
+['hasShape Quadruped', 'hasShape Upright', 'hasShape Armor', 'hasShape Squiggle', 'hasShape Bug-Wings', 'hasShape Wings', 'hasShape Humanoid', 'hasShape Legs', 'hasShape Blob', 'hasShape Heads', 'hasShape Tentacles', 'hasShape Arms', 'hasShape Fish', 'hasShape Ball']
+
+
+
+normal_attack_effectiveness
+--- how effective againstNormal ---
+['howEffectiveNormal normal', 'howEffectiveNormal notVeryEffective']
+
+
+
+fire_attack_effectiveness
+--- how effective againstFire ---
+['howEffectiveFire superEffective', 'howEffectiveFire notVeryEffective', 'howEffectiveFire normal']
+
+
+
+water_attack_effectiveness
+--- how effective againstWater ---
+['howEffectiveWater notVeryEffective', 'howEffectiveWater superEffective', 'howEffectiveWater normal']
+
+
+
+electric_attack_effectiveness
+--- how effective againstElectric ---
+['howEffectiveElectric notVeryEffective', 'howEffectiveElectric normal', 'howEffectiveElectric superEffective']
+
+
+
+grass_attack_effectiveness
+--- how effective againstGrass ---
+['howEffectiveGrass superEffective', 'howEffectiveGrass notVeryEffective', 'howEffectiveGrass superEffective']
+
+
+
+ice_attack_effectiveness
+--- how effective againstIce ---
+['howEffectiveIce superEffective', 'howEffectiveIce notVeryEffective', 'howEffectiveIce normal']
+
+
+
+fighting_attack_effectiveness
+--- how effective againstFighting ---
+['howEffectiveFighting notVeryEffective', 'howEffectiveFighting normal', 'howEffectiveFighting superEffective']
+
+
+
+poison_attack_effectiveness
+--- how effective againstPoison ---
+['howEffectivePoison normal', 'howEffectivePoison notVeryEffective', 'howEffectivePoison superEffective']
+
+
+
+ground_attack_effectiveness
+--- how effective againstGround ---
+['howEffectiveGround normal', 'howEffectiveGround superEffective', 'howEffectiveGround notVeryEffective']
+
+
+
+fly_attack_effectiveness
+--- how effective againstFly ---
+['howEffectiveFly superEffective', 'howEffectiveFly normal', 'howEffectiveFly notVeryEffective']
+
+
+
+psychic_attack_effectiveness
+--- how effective againstPsychic ---
+['howEffectivePsychic superEffective', 'howEffectivePsychic normal', 'howEffectivePsychic notVeryEffective']
+
+
+
+bug_attack_effectiveness
+--- how effective againstBug ---
+['howEffectiveBug normal', 'howEffectiveBug notVeryEffective', 'howEffectiveBug superEffective']
+
+
+
+rock_attack_effectiveness
+--- how effective againstRock ---
+['howEffectiveRock normal', 'howEffectiveRock superEffective', 'howEffectiveRock notVeryEffective']
+
+
+
+ghost_attack_effectiveness
+--- how effective againstGhost ---
+['howEffectiveGhost normal', 'howEffectiveGhost superEffective', 'howEffectiveGhost notVeryEffective']
+
+
+
+dragon_attack_effectiveness
+--- how effective againstDragon ---
+['howEffectiveDragon normal', 'howEffectiveDragon notVeryEffective', 'howEffectiveDragon superEffective']
+
+
+
+dark_attack_effectiveness
+--- how effective againstDark ---
+['howEffectiveDark normal', 'howEffectiveDark notVeryEffective', 'howEffectiveDark superEffective']
+
+
+
+steel_attack_effectiveness
+--- how effective againstSteel ---
+['howEffectiveSteel normal', 'howEffectiveSteel notVeryEffective', 'howEffectiveSteel superEffective']
+
+
+
