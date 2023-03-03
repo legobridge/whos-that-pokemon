@@ -1,0 +1,4 @@
+rule: ((isColor Yellow) (isPrimaryColor) (isLegendary) (isType Electric)) -> (isPokemon Zapdos)
+rule: ((isColor Yellow) (isPrimaryColor) (canEvolve) (isType Electric)) -> (isPokemon Pikachu)
+rule: ((isColor Blue) (isPrimaryColor) (canEvolve) (isType Water)) -> (isPokemon Squirtle)
+rule: ((isColor Green) (canEvolve) (isType Grass) (isType Poison)) -> (isPokemon Bulbasaur)
