@@ -34,7 +34,7 @@
 
 
 -------Primary Color-------
-['isColot Green', 'isColot Red', 'isColot Blue', 'isColot White', 'isColot Brown', 'isColot Yellow', 'isColot Purple', 'isColot Pink', 'isColot Gray', 'isColot Black']
+['isColor Green', 'isColor Red', 'isColor Blue', 'isColor White', 'isColor Brown', 'isColor Yellow', 'isColor Purple', 'isColor Pink', 'isColor Gray', 'isColor Black']
 
 
 
