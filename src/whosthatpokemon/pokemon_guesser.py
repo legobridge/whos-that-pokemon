@@ -2,6 +2,8 @@ from src.knowledgebase import read
 from src.knowledgebase.kb import KnowledgeBase
 from src.knowledgebase.logical_classes import *
 
+import random
+
 
 class PokemonGuesser:
 
@@ -41,7 +43,7 @@ class PokemonGuesser:
                 smallest_rule_length = len(rule.lhs)
 
         # todo - choose statements better
-        best_statement = smallest_rule.lhs[0]
+        best_statement = smallest_rule.lhs[random.randint(0, len(smallest_rule.lhs) - 1)]
         return best_statement
 
     def return_pokemon_if_found(self):
@@ -51,7 +53,7 @@ class PokemonGuesser:
         :return: False if it is still not narrowed down to 1 Pokemon.
                  Name of the guessed Pokemon otherwise.
         """
-        # todo - Kushal
+
         return False
 
     def add_user_answer_to_kb(self, question_statement: Statement, answer: bool):
