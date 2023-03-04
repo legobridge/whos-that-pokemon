@@ -63,7 +63,6 @@ class KnowledgeBase(object):
         Returns:
             None
         """
-        printv("Adding {!r}", 1, verbose, [fact_rule])
         if isinstance(fact_rule, Fact):
             if fact_rule not in self.facts:
                 new_facts_all = []
