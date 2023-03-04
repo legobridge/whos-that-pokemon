@@ -1,5 +1,5 @@
-from logical_classes import *
-from util import *
+from src.knowledgebase.logical_classes import *
+from src.knowledgebase.util import *
 
 verbose = 0
 

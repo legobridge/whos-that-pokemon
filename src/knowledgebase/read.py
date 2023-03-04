@@ -1,4 +1,4 @@
-from logical_classes import *
+from src.knowledgebase.logical_classes import *
 
 
 # read_tokenize takes the name of a file, reads it in and tokenizes the

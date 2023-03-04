@@ -12,6 +12,12 @@ def get_question_from_statement(statement):
         return f'Is the Pokemon {value} in color?'
     if feature == 'isLegendary':
         return f'Is it a legendary Pokemon?'
+    if feature == 'canEvolve':
+        return f'Can the Pokemon evolve into another Pokemon?'
+    if feature == 'isPrimaryColor':
+        return f'Is the main color of the Pokemon a primary color?'
+    if feature == 'isType':
+        return f'Is it a/an {value} type Pokemon?'
 
 
 def get_feature_and_value_from_statement(statement):

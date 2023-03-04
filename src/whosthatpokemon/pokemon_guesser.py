@@ -2,21 +2,23 @@ from src.knowledgebase import read
 from src.knowledgebase.kb import KnowledgeBase
 from src.knowledgebase.logical_classes import *
 
+import random
+
 
 class PokemonGuesser:
 
-    def __init__(self):
+    def __init__(self,
+                 kb_file='../../data/pokemon_kb.txt',
+                 perm_rules_file='../../data/pokemon_perm_rules_kb.txt'):
         self.KB = KnowledgeBase([], [], [])
 
         # Assert starter rules
-        kb_file = '../../data/pokemon_kb.txt'
         data = read.read_tokenize(kb_file)
         for item in data:
             if isinstance(item, Fact) or isinstance(item, Rule):
                 self.KB.kb_assert(item)
 
         # Assert permanent rules
-        perm_rules_file = '../../data/pokemon_perm_rules_kb.txt'
         perm_rule_data = read.read_tokenize(perm_rules_file)
         for perm_rule in perm_rule_data:
             if isinstance(perm_rule, Rule):
@@ -41,7 +43,7 @@ class PokemonGuesser:
                 smallest_rule_length = len(rule.lhs)
 
         # todo - choose statements better
-        best_statement = smallest_rule.lhs[0]
+        best_statement = smallest_rule.lhs[random.randint(0, len(smallest_rule.lhs) - 1)]
         return best_statement
 
     def return_pokemon_if_found(self):
@@ -51,8 +53,16 @@ class PokemonGuesser:
         :return: False if it is still not narrowed down to 1 Pokemon.
                  Name of the guessed Pokemon otherwise.
         """
-        # todo - Kushal
-        return False
+        pokemon_rules_left = len(self.KB.rules) - len(self.KB.permanent_rules)
+        if pokemon_rules_left > 1:
+            return False
+        if pokemon_rules_left == 0:
+            final_question = Fact(Statement(['isPokemon', '?x']))
+            bindings = self.KB.kb_ask(final_question)
+            return bindings[0]['?x']
+        for rule in self.KB.rules:
+            if rule not in self.KB.permanent_rules:
+                return rule.rhs.terms[0].term.element
 
     def add_user_answer_to_kb(self, question_statement: Statement, answer: bool):
         """
@@ -61,5 +71,6 @@ class PokemonGuesser:
         :param question_statement: the Statement that was used to ask the question.
         :param answer: True if the user said yes, False otherwise
         """
-        # todo - Kushal
-        pass
+        if not answer:
+            question_statement.predicate = '~' + question_statement.predicate
+        self.KB.kb_add(Fact(question_statement))

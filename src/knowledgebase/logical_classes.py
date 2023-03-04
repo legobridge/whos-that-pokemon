@@ -1,4 +1,4 @@
-from util import is_var
+from src.knowledgebase.util import is_var
 
 
 class Fact(object):
