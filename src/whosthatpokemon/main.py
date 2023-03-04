@@ -16,9 +16,9 @@ def main():
         global USER_CHOICE
         global CURR_STMT
         USER_CHOICE = True
+        print("CURR_STMT ", CURR_STMT)
+        print("USER_CHOICE ", USER_CHOICE)
         try:
-            print("CURR_STMT ", CURR_STMT)
-            print("USER_CHOICE ", USER_CHOICE)
             pg.add_user_answer_to_kb(CURR_STMT, USER_CHOICE)
         finally:
             refresh_question()
@@ -27,13 +27,20 @@ def main():
         global USER_CHOICE
         global CURR_STMT
         USER_CHOICE = False
+        print("CURR_STMT ", CURR_STMT)
+        print("USER_CHOICE ", USER_CHOICE)
         try:
             pg.add_user_answer_to_kb(CURR_STMT, USER_CHOICE)
         finally:
             refresh_question()
 
     def idk():
-        refresh_question()
+        global CURR_STMT
+        print("CURR_STMT ", CURR_STMT)
+        try:
+            pg.remove_ambiguous_predicate(CURR_STMT)
+        finally:
+            refresh_question()
 
 
     # get the next question from KB
@@ -42,21 +49,23 @@ def main():
         global CURR_STMT
         pokemon_name = pg.return_pokemon_if_found()
         if pokemon_name:
-            # TODO
-            print("Pokemon found: ", pokemon_name)
+            Text.set("Pokemon character is... \n" + pokemon_name.upper())
+            yes_button.destroy()
+            no_button.destroy()
+            idk_button.destroy()
+
         else:
             CURR_STMT = pg.get_best_statement_for_next_question()
             Q = get_question_from_statement(CURR_STMT)
             Text.set(Q)
-
 
     # create a window
     window = Tk()
     style = Style()
     style.configure('TButton', font=('helvetica', 14, 'bold'), foreground='blue', relief='RAISED')
     style.configure('red.TButton', foreground='red')
-    bgimg = PhotoImage(file='../../data/pokemon.gif')
-    bg = Label(window, image=bgimg)
+    bg_img = PhotoImage(file='../../data/pokemon.gif')
+    bg = Label(window, image=bg_img)
     bg.place(x=0, y=0, relwidth=1, relheight=1)
     window.title("WHO'S THAT POKEMON?")
     window.geometry('500x500+400+400')
