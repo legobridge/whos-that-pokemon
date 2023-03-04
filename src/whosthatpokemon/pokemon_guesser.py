@@ -33,17 +33,46 @@ class PokemonGuesser:
         :return: a Statement, comprising a predicate (isLegendary)
                  and 0 or 1 terms (Red, for the predicate isColor)
         """
-        smallest_rule = None
-        smallest_rule_length = 100000
+        # todo - choose statements better
+
+        predicate_difficulty_categories = {
+            'easy': ['wasIntroducedIn', 'isLegendary', 'canEvolve', 'isAshOwned',
+                     'isPrimaryColor', 'isType', 'evolvesFrom'],
+            'ok': ['isColor', 'itHasHeight', 'itHasWeight', 'hasShape'],
+            'hard': ['howEffective', 'isGenus'],
+        }
+
+        all_statements = {}
         for rule in self.KB.rules:
             if rule in self.KB.permanent_rules:
                 continue
-            if len(rule.lhs) < smallest_rule_length:
-                smallest_rule = rule
-                smallest_rule_length = len(rule.lhs)
+            for statement in rule.lhs:
+                if statement not in all_statements:
+                    all_statements[statement] = 0
+                all_statements[statement] += 1
 
-        # todo - choose statements better
-        best_statement = smallest_rule.lhs[random.randint(0, len(smallest_rule.lhs) - 1)]
+        best_statement = self.get_best_splitting_statement(all_statements, predicate_difficulty_categories['easy'])
+        if best_statement is not None:
+            return best_statement
+
+        best_statement = self.get_best_splitting_statement(all_statements, predicate_difficulty_categories['ok'])
+        if best_statement is not None:
+            return best_statement
+
+        best_statement = self.get_best_splitting_statement(all_statements, predicate_difficulty_categories['hard'])
+
+        return best_statement
+
+    def get_best_splitting_statement(self, all_statements, predicates_to_choose_from):
+        pokemon_rules_left = len(self.KB.rules) - len(self.KB.permanent_rules)
+        best_statement = None
+        lowest_split_error = 10000000
+        for statement, frequency in all_statements.items():
+            if statement.predicate in predicates_to_choose_from:
+                split_error = abs(0.5 - (frequency / pokemon_rules_left))
+                if best_statement is None or split_error < lowest_split_error:
+                    best_statement = statement
+                    lowest_split_error = split_error
         return best_statement
 
     def return_pokemon_if_found(self):

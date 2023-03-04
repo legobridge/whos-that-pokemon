@@ -18,6 +18,7 @@ def get_question_from_statement(statement):
         return f'Is the main color of the Pokemon a primary color?'
     if feature == 'isType':
         return f'Is it a/an {value} type Pokemon?'
+    return statement
 
 
 def get_feature_and_value_from_statement(statement):

@@ -145,6 +145,11 @@ class Statement(object):
 
         return True
 
+    def __hash__(self):
+        """Define hashing behavior of this object
+        """
+        return hash(self.__str__())
+
     def __ne__(self, other):
         """Define behavior of != when applied to this object
         """
