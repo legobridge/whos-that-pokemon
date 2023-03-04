@@ -53,8 +53,16 @@ class PokemonGuesser:
         :return: False if it is still not narrowed down to 1 Pokemon.
                  Name of the guessed Pokemon otherwise.
         """
-
-        return False
+        pokemon_rules_left = len(self.KB.rules) - len(self.KB.permanent_rules)
+        if pokemon_rules_left > 1:
+            return False
+        if pokemon_rules_left == 0:
+            final_question = Fact(Statement(['isPokemon', '?x']))
+            bindings = self.KB.kb_ask(final_question)
+            return bindings[0]['?x']
+        for rule in self.KB.rules:
+            if rule not in self.KB.permanent_rules:
+                return rule.rhs.terms[0].term.element
 
     def add_user_answer_to_kb(self, question_statement: Statement, answer: bool):
         """
@@ -63,5 +71,6 @@ class PokemonGuesser:
         :param question_statement: the Statement that was used to ask the question.
         :param answer: True if the user said yes, False otherwise
         """
-        # todo - Kushal
-        pass
+        if not answer:
+            question_statement.predicate = '~' + question_statement.predicate
+        self.KB.kb_add(Fact(question_statement))
