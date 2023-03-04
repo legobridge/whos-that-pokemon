@@ -5,18 +5,18 @@ from src.knowledgebase.logical_classes import *
 
 class PokemonGuesser:
 
-    def __init__(self):
+    def __init__(self,
+                 kb_file='../../data/pokemon_kb.txt',
+                 perm_rules_file='../../data/pokemon_perm_rules_kb.txt'):
         self.KB = KnowledgeBase([], [], [])
 
         # Assert starter rules
-        kb_file = '../../data/pokemon_kb.txt'
         data = read.read_tokenize(kb_file)
         for item in data:
             if isinstance(item, Fact) or isinstance(item, Rule):
                 self.KB.kb_assert(item)
 
         # Assert permanent rules
-        perm_rules_file = '../../data/pokemon_perm_rules_kb.txt'
         perm_rule_data = read.read_tokenize(perm_rules_file)
         for perm_rule in perm_rule_data:
             if isinstance(perm_rule, Rule):

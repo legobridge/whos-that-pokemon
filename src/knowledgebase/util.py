@@ -1,4 +1,4 @@
-import logical_classes as lc
+import src.knowledgebase.logical_classes as lc
 
 
 def is_var(var):
