@@ -50,6 +50,13 @@ class KBTest(unittest.TestCase):
         self.pg.add_user_answer_to_kb(Statement(['canEvolve']), False)
         self.assertEqual('Zapdos', self.pg.return_pokemon_if_found())
 
+    def test8(self):
+        # Pokemon should be found if user answers some questions with no
+        self.pg.add_user_answer_to_kb(Statement(['isColor', 'Yellow']), False)
+        self.pg.add_user_answer_to_kb(Statement(['canEvolve']), True)
+        self.pg.add_user_answer_to_kb(Statement(['isPrimaryColor']), False)
+        self.assertEqual('Bulbasaur', self.pg.return_pokemon_if_found())
+
 
 if __name__ == '__main__':
     unittest.main()

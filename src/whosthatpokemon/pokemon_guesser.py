@@ -72,5 +72,5 @@ class PokemonGuesser:
         :param answer: True if the user said yes, False otherwise
         """
         if not answer:
-            question_statement.predicate = '~' + question_statement.predicate
+            question_statement = Statement(['~' + question_statement.predicate] + question_statement.terms)
         self.KB.kb_add(Fact(question_statement))
