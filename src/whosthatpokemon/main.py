@@ -49,32 +49,39 @@ def main():
         global CURR_STMT
         pokemon_name = pg.return_pokemon_if_found()
         if pokemon_name:
-            Text.set("Pokemon character is... \n" + pokemon_name.upper())
+            Text.set(" Pokemon character is...\n" + pokemon_name.upper())
+            LabelResult.config(bg='#2a75bb', fg="#ffcb05")
             yes_button.destroy()
             no_button.destroy()
             idk_button.destroy()
+
+            img2 = PhotoImage(file='../../data/pokemon_images/'+pokemon_name.lower()+'.png')
+            bg.configure(image=img2)
+            bg.image = img2
 
         else:
             CURR_STMT = pg.get_best_statement_for_next_question()
             Q = get_question_from_statement(CURR_STMT)
             Text.set(Q)
 
-    # create a window
+    # create a window and background image
     window = Tk()
     style = Style()
-    style.configure('TButton', font=('helvetica', 14, 'bold'), foreground='blue', relief='RAISED')
+    style.configure('TButton', font=('helvetica', 14, 'bold'), foreground='#2a75bb', highlightbackground='#ffcb05', relief='RAISED')
     style.configure('red.TButton', foreground='red')
-    bg_img = PhotoImage(file='../../data/pokemon.gif')
-    bg = Label(window, image=bg_img)
+    img1 = PhotoImage(file='../../data/pokemon.gif')
+    bg = Label(window, image=img1)
     bg.place(x=0, y=0, relwidth=1, relheight=1)
     window.title("WHO'S THAT POKEMON?")
     window.geometry('500x500+400+400')
 
+    # text to display questions
     Text = StringVar()
     refresh_question()  # begin
-    LabelResult = Label(window, textvariable=Text, fg='blue', bg='light blue', font=('helvetica', 20, 'bold'))
+    LabelResult = Label(window, textvariable=Text, fg='#ffcb05', bg='#2a75bb', font=('Comic Sans MS', 20, 'bold'))
     LabelResult.pack(side=TOP, padx=5, pady=50)
 
+    # buttons
     quit_button = Button(window, text='Quit', style='red.TButton', command=window.destroy)
     quit_button.pack(side=BOTTOM, padx=5, pady=5)
     yes_button = Button(window, text="Yes", command=yes)
