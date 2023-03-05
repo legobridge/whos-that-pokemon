@@ -11,9 +11,10 @@ class PokemonGuesser:
         self.KB = KnowledgeBase([], [], [])
 
         self.predicate_difficulty_categories = {
+            'super_easy': ['isFirstLetter'],
             'easy': ['wasIntroducedIn', 'isLegendary', 'canEvolve', 'isAshOwned',
-                     'isPrimaryColor', 'isType', 'evolvesFrom'],
-            'ok': ['isColor', 'itHasHeight', 'itHasWeight', 'hasShape'],
+                     'isPrimaryColor', 'isType', 'evolvesFromSomething'],
+            'ok': ['isColor', 'itHasHeight', 'itWeighs', 'hasShape'],
             'hard': ['howEffective', 'isGenus'],
         }
 
@@ -58,6 +59,10 @@ class PokemonGuesser:
             return best_statement
 
         best_statement = self.get_best_splitting_statement(all_statements, self.predicate_difficulty_categories['hard'])
+        if best_statement is not None:
+            return best_statement
+
+        best_statement = self.get_best_splitting_statement(all_statements, self.predicate_difficulty_categories['super_easy'])
 
         return best_statement
 
