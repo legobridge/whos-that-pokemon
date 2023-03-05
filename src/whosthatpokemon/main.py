@@ -45,7 +45,6 @@ def main():
 
     def end(text):
         display.set(text)
-        question_textbox.config(bg='#2a75bb', fg="#ffcb05")
         yes_button.destroy()
         no_button.destroy()
         idk_button.destroy()
