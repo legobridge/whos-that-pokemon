@@ -43,9 +43,9 @@ def get_question_from_statement(statement):
         return f'Does the Pokemon evolve from another Pokemon?'
     elif feature == 'hasShape':
         if value == 'Quadruped':
-            return f'Does the Pokemon have four legs?'
+            return f'Does the Pokemon walk/run on four legs?'
         elif value == 'Upright':
-            return f'Does the Pokemon have two legs and a tail?'
+            return f'Is it a tailed Pokemon that walks upright on two legs?'
         elif value == 'Armor':
             return f'Does the Pokemon have an insectoid body and hard shell?'
         elif value == 'Squiggle':
