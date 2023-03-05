@@ -86,7 +86,10 @@ class PokemonGuesser:
         if pokemon_rules_left == 0:
             final_question = Fact(Statement(['isPokemon', '?x']))
             bindings = self.KB.kb_ask(final_question)
-            return bindings[0]['?x']
+            if len(bindings) == 0:
+                return None
+            else:
+                return bindings[0]['?x']
         for rule in self.KB.rules:
             if rule not in self.KB.permanent_rules:
                 return rule.rhs.terms[0].term.element

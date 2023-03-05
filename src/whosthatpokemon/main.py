@@ -37,6 +37,7 @@ def main():
     def idk():
         global CURR_STMT
         print("CURR_STMT ", CURR_STMT)
+        print("USER_CHOICE IDK")
         try:
             pg.remove_ambiguous_predicate(CURR_STMT)
         finally:
@@ -48,9 +49,17 @@ def main():
         global Q
         global CURR_STMT
         pokemon_name = pg.return_pokemon_if_found()
-        if pokemon_name:
-            Text.set(f'Maybe you were thinking of... {pokemon_name.upper()}?')
-            LabelResult.config(bg='#2a75bb', fg="#ffcb05")
+
+        if pokemon_name is None:
+            display.set('Sorry! No pokemon matches those features.')
+            question_textbox.config(bg='#2a75bb', fg="#ffcb05")
+            yes_button.destroy()
+            no_button.destroy()
+            idk_button.destroy()
+
+        elif pokemon_name:
+            display.set(f'Maybe you were thinking of... {pokemon_name.upper()}?')
+            question_textbox.config(bg='#2a75bb', fg="#ffcb05")
             yes_button.destroy()
             no_button.destroy()
             idk_button.destroy()
@@ -64,7 +73,7 @@ def main():
         else:
             CURR_STMT = pg.get_best_statement_for_next_question()
             Q = get_question_from_statement(CURR_STMT)
-            Text.set(Q)
+            display.set(Q)
 
     # create a window and background image
     window = Tk()
@@ -78,10 +87,10 @@ def main():
     window.geometry('500x500+400+400')
 
     # text to display questions
-    Text = StringVar()
+    display = StringVar()
     refresh_question()  # begin
-    LabelResult = Label(window, textvariable=Text, fg='#ffcb05', bg='#2a75bb', font=('Comic Sans MS', 20, 'bold'))
-    LabelResult.pack(side=TOP, padx=5, pady=50)
+    question_textbox = Label(window, textvariable=display, fg='#ffcb05', bg='#2a75bb', font=('Comic Sans MS', 20, 'bold'))
+    question_textbox.pack(side=TOP, padx=5, pady=50)
 
     # buttons
     quit_button = Button(window, text='Quit', style='red.TButton', command=window.destroy)
