@@ -51,14 +51,14 @@ def main():
         pokemon_name = pg.return_pokemon_if_found()
 
         if pokemon_name is None:
-            display.set(" Sorry! No pokemon matches those features.")
+            display.set('Sorry! No pokemon matches those features.')
             question_textbox.config(bg='#2a75bb', fg="#ffcb05")
             yes_button.destroy()
             no_button.destroy()
             idk_button.destroy()
 
         elif pokemon_name:
-            display.set(" Pokemon character is...\n" + pokemon_name.upper())
+            display.set(f'Maybe you were thinking of... {pokemon_name.upper()}?')
             question_textbox.config(bg='#2a75bb', fg="#ffcb05")
             yes_button.destroy()
             no_button.destroy()
