@@ -8,13 +8,8 @@
 
 
 
--------Type 1 List-------
-['isType Grass', 'isType Fire', 'isType Water', 'isType Bug', 'isType Normal', 'isType Poison', 'isType Electric', 'isType Ground', 'isType Fairy', 'isType Fighting', 'isType Psychic', 'isType Rock', 'isType Ghost', 'isType Ice', 'isType Dragon', 'isType Dark', 'isType Steel']
-
-
-
--------Type 2 List-------
-['isType Poison', 'isType Flying', 'isType Ground', 'isType Fairy', 'isType Grass', 'isType Fighting', 'isType Psychic', 'isType Steel', 'isType Ice', 'isType Rock', 'isType Water', 'isType Electric', 'isType Fire', 'isType Dragon', 'isType Dark']
+-------Type List-------
+['isType Dragon', 'isType Grass', 'isType Water', 'isType Bug', 'isType Fairy', 'isType Normal', 'isType Fire', 'isType Electric', 'isType Fighting', 'isType Ghost', 'isType Ice', 'isType Ground', 'isType Rock', 'isType Dark', 'isType Steel', 'isType Flying', 'isType Psychic', 'isType Poison']
 
 
 
@@ -35,6 +30,11 @@
 
 -------Can Evolve-------
 ['canEvolve']
+
+
+
+-------first letter of pokemon list-------
+['isFirstLetter A', 'isFirstLetter B', 'isFirstLetter C', 'isFirstLetter D', 'isFirstLetter E', 'isFirstLetter F', 'isFirstLetter G', 'isFirstLetter H', 'isFirstLetter I', 'isFirstLetter J', 'isFirstLetter K', 'isFirstLetter L', 'isFirstLetter M', 'isFirstLetter N', 'isFirstLetter O', 'isFirstLetter P', 'isFirstLetter Q', 'isFirstLetter R', 'isFirstLetter S', 'isFirstLetter T', 'isFirstLetter U', 'isFirstLetter V', 'isFirstLetter W', 'isFirstLetter X', 'isFirstLetter Y', 'isFirstLetter Z']
 
 
 
