@@ -43,6 +43,13 @@ def main():
         finally:
             refresh_question()
 
+    def end(text):
+        display.set(text)
+        question_textbox.config(bg='#2a75bb', fg="#ffcb05")
+        yes_button.destroy()
+        no_button.destroy()
+        idk_button.destroy()
+
 
     # get the next question from KB
     def refresh_question():
@@ -51,29 +58,21 @@ def main():
         pokemon_name = pg.return_pokemon_if_found()
 
         if pokemon_name is None:
-            display.set('Sorry! No pokemon matches those features.')
-            question_textbox.config(bg='#2a75bb', fg="#ffcb05")
-            yes_button.destroy()
-            no_button.destroy()
-            idk_button.destroy()
-
+            end('Sorry! No Pokemon matches those features.')
         elif pokemon_name:
-            display.set(f'Maybe you were thinking of... {pokemon_name.upper()}?')
-            question_textbox.config(bg='#2a75bb', fg="#ffcb05")
-            yes_button.destroy()
-            no_button.destroy()
-            idk_button.destroy()
-
+            end(f'Maybe you were thinking of... {pokemon_name.upper()}?')
             img2 = Image.open('../../data/pokemon_images/'+pokemon_name.lower()+'.png')
             resized_img2 = img2.resize((350, 350), Image.LANCZOS)
             img2 = ImageTk.PhotoImage(resized_img2)
             bg.configure(image=img2)
             bg.image = img2
-
         else:
             CURR_STMT = pg.get_best_statement_for_next_question()
-            Q = get_question_from_statement(CURR_STMT)
-            display.set(Q)
+            if CURR_STMT is not None:
+                Q = get_question_from_statement(CURR_STMT)
+                display.set(Q)
+            else:
+                end(" Sorry! \n I'm not sure what else I can ask you about.")
 
     # create a window and background image
     window = Tk()
