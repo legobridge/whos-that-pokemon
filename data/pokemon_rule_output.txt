@@ -1,3 +1,13 @@
+------It Weighs-------
+['itWeighs veryLight', 'itWeighs veryHeavy']
+
+
+
+------It Has Height-------
+['itHasHeight veryShort', 'itHasHeight veryTall']
+
+
+
 -------Type 1 List-------
 ['isType Grass', 'isType Fire', 'isType Water', 'isType Bug', 'isType Normal', 'isType Poison', 'isType Electric', 'isType Ground', 'isType Fairy', 'isType Fighting', 'isType Psychic', 'isType Rock', 'isType Ghost', 'isType Ice', 'isType Dragon', 'isType Dark', 'isType Steel']
 
@@ -30,6 +40,11 @@
 
 -------Evolves From-------
 ['evolvesFrom Bulbasaur', 'evolvesFrom Ivysaur', 'evolvesFrom Charmander', 'evolvesFrom Charmeleon', 'evolvesFrom Squirtle', 'evolvesFrom Wartortle', 'evolvesFrom Caterpie', 'evolvesFrom Metapod', 'evolvesFrom Weedle', 'evolvesFrom Kakuna', 'evolvesFrom Pidgey', 'evolvesFrom Pidgeotto', 'evolvesFrom Rattata', 'evolvesFrom Spearow', 'evolvesFrom Ekans', 'evolvesFrom Pichu', 'evolvesFrom Pikachu', 'evolvesFrom Sandshrew', 'evolvesFrom Nidoran F', 'evolvesFrom Nidorina', 'evolvesFrom Nidoran M', 'evolvesFrom Nidorino', 'evolvesFrom Cleffa', 'evolvesFrom Clefairy', 'evolvesFrom Vulpix', 'evolvesFrom Igglybuff', 'evolvesFrom Jigglypuff', 'evolvesFrom Zubat', 'evolvesFrom Oddish', 'evolvesFrom Gloom', 'evolvesFrom Paras', 'evolvesFrom Venonat', 'evolvesFrom Diglett', 'evolvesFrom Meowth', 'evolvesFrom Psyduck', 'evolvesFrom Mankey', 'evolvesFrom Growlithe', 'evolvesFrom Poliwag', 'evolvesFrom Poliwhirl', 'evolvesFrom Abra', 'evolvesFrom Kadabra', 'evolvesFrom Machop', 'evolvesFrom Machoke', 'evolvesFrom Bellsprout', 'evolvesFrom Weepinbell', 'evolvesFrom Tentacool', 'evolvesFrom Geodude', 'evolvesFrom Graveler', 'evolvesFrom Ponyta', 'evolvesFrom Slowpoke', 'evolvesFrom Magnemite', 'evolvesFrom Doduo', 'evolvesFrom Seel', 'evolvesFrom Grimer', 'evolvesFrom Shellder', 'evolvesFrom Gastly', 'evolvesFrom Haunter', 'evolvesFrom Drowzee', 'evolvesFrom Krabby', 'evolvesFrom Voltorb', 'evolvesFrom Exeggcute', 'evolvesFrom Cubone', 'evolvesFrom Tyrogue', 'evolvesFrom Koffing', 'evolvesFrom Rhyhorn', 'evolvesFrom Happiny', 'evolvesFrom Horsea', 'evolvesFrom Goldeen', 'evolvesFrom Staryu', 'evolvesFrom Mime Jr', 'evolvesFrom Smoochum', 'evolvesFrom Elekid', 'evolvesFrom Magby', 'evolvesFrom Magikarp', 'evolvesFrom Eevee', 'evolvesFrom Omanyte', 'evolvesFrom Kabuto', 'evolvesFrom Munchlax', 'evolvesFrom Dratini', 'evolvesFrom Dragonair', 'evolvesFrom Chikorita', 'evolvesFrom Bayleef', 'evolvesFrom Cyndaquil', 'evolvesFrom Quilava', 'evolvesFrom Totodile', 'evolvesFrom Croconaw', 'evolvesFrom Sentret', 'evolvesFrom Hoothoot', 'evolvesFrom Ledyba', 'evolvesFrom Spinarak', 'evolvesFrom Golbat', 'evolvesFrom Chinchou', 'evolvesFrom Togepi', 'evolvesFrom Natu', 'evolvesFrom Mareep', 'evolvesFrom Flaaffy', 'evolvesFrom Azurill', 'evolvesFrom Marill', 'evolvesFrom Bonsly', 'evolvesFrom Hoppip', 'evolvesFrom Skiploom', 'evolvesFrom Sunkern', 'evolvesFrom Wooper', 'evolvesFrom Wynaut', 'evolvesFrom Pineco', 'evolvesFrom Onix', 'evolvesFrom Snubbull', 'evolvesFrom Scyther', 'evolvesFrom Teddiursa', 'evolvesFrom Slugma', 'evolvesFrom Swinub', 'evolvesFrom Remoraid', 'evolvesFrom Mantyke', 'evolvesFrom Houndour', 'evolvesFrom Seadra', 'evolvesFrom Phanpy', 'evolvesFrom Porygon', 'evolvesFrom Chansey', 'evolvesFrom Larvitar', 'evolvesFrom Pupitar']
+
+
+
+-------Evolves From Something-------
+['evolvesFromSomething']
 
 
 

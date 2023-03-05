@@ -2,8 +2,6 @@ from src.knowledgebase import read
 from src.knowledgebase.kb import KnowledgeBase
 from src.knowledgebase.logical_classes import *
 
-import random
-
 
 class PokemonGuesser:
 
@@ -115,4 +113,4 @@ class PokemonGuesser:
         predicate = question_statement.predicate
         for k, v in self.predicate_difficulty_categories.items():
             if predicate in v:
-                v = v.remove(predicate)
+                v.remove(predicate)

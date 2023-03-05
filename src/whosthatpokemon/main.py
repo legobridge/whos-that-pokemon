@@ -1,8 +1,8 @@
 from pokemon_guesser import *
-from questions import *
 from tkinter import *
 from tkinter.ttk import Button, Style
 from questions import *
+from PIL import Image, ImageTk
 
 
 def main():
@@ -49,6 +49,7 @@ def main():
         global Q
         global CURR_STMT
         pokemon_name = pg.return_pokemon_if_found()
+
         if pokemon_name is None:
             display.set(" Sorry! No pokemon matches those features.")
             question_textbox.config(bg='#2a75bb', fg="#ffcb05")
@@ -63,7 +64,9 @@ def main():
             no_button.destroy()
             idk_button.destroy()
 
-            img2 = PhotoImage(file='../../data/pokemon_images/'+pokemon_name.lower()+'.png')
+            img2 = Image.open('../../data/pokemon_images/'+pokemon_name.lower()+'.png')
+            resized_img2 = img2.resize((350, 350), Image.LANCZOS)
+            img2 = ImageTk.PhotoImage(resized_img2)
             bg.configure(image=img2)
             bg.image = img2
 
