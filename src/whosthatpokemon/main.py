@@ -1,24 +1,99 @@
 from pokemon_guesser import *
 from questions import *
+from tkinter import *
+from tkinter.ttk import Button, Style
+from questions import *
 
-# todo - Aparna use the functions in pokemon_guesser.py and questions.py
 
-
-def console_main():
+def main():
+    USER_CHOICE = False
+    CURR_STMT = ""  # statement from KB
+    Q = ""  # current question
     pg = PokemonGuesser()
-    while True:
-        state = pg.get_best_statement_for_next_question()
-        question = get_question_from_statement(state)
-        ans = input(question)
-        if ans == 'y':
-            pg.add_user_answer_to_kb(state, True)
-        elif ans == 'n':
-            pg.add_user_answer_to_kb(state, False)
-        found_pokemon = pg.return_pokemon_if_found()
-        if found_pokemon:
-            print(found_pokemon)
-            break
+
+    # process user input
+    def yes():
+        global USER_CHOICE
+        global CURR_STMT
+        USER_CHOICE = True
+        print("CURR_STMT ", CURR_STMT)
+        print("USER_CHOICE ", USER_CHOICE)
+        try:
+            pg.add_user_answer_to_kb(CURR_STMT, USER_CHOICE)
+        finally:
+            refresh_question()
+
+    def no():
+        global USER_CHOICE
+        global CURR_STMT
+        USER_CHOICE = False
+        print("CURR_STMT ", CURR_STMT)
+        print("USER_CHOICE ", USER_CHOICE)
+        try:
+            pg.add_user_answer_to_kb(CURR_STMT, USER_CHOICE)
+        finally:
+            refresh_question()
+
+    def idk():
+        global CURR_STMT
+        print("CURR_STMT ", CURR_STMT)
+        try:
+            pg.remove_ambiguous_predicate(CURR_STMT)
+        finally:
+            refresh_question()
+
+
+    # get the next question from KB
+    def refresh_question():
+        global Q
+        global CURR_STMT
+        pokemon_name = pg.return_pokemon_if_found()
+        if pokemon_name:
+            Text.set(" Pokemon character is...\n" + pokemon_name.upper())
+            LabelResult.config(bg='#2a75bb', fg="#ffcb05")
+            yes_button.destroy()
+            no_button.destroy()
+            idk_button.destroy()
+
+            img2 = PhotoImage(file='../../data/pokemon_images/'+pokemon_name.lower()+'.png')
+            bg.configure(image=img2)
+            bg.image = img2
+
+        else:
+            CURR_STMT = pg.get_best_statement_for_next_question()
+            Q = get_question_from_statement(CURR_STMT)
+            Text.set(Q)
+
+    # create a window and background image
+    window = Tk()
+    style = Style()
+    style.configure('TButton', font=('helvetica', 14, 'bold'), foreground='#2a75bb', highlightbackground='#ffcb05', relief='RAISED')
+    style.configure('red.TButton', foreground='red')
+    img1 = PhotoImage(file='../../data/pokemon.gif')
+    bg = Label(window, image=img1)
+    bg.place(x=0, y=0, relwidth=1, relheight=1)
+    window.title("WHO'S THAT POKEMON?")
+    window.geometry('500x500+400+400')
+
+    # text to display questions
+    Text = StringVar()
+    refresh_question()  # begin
+    LabelResult = Label(window, textvariable=Text, fg='#ffcb05', bg='#2a75bb', font=('Comic Sans MS', 20, 'bold'))
+    LabelResult.pack(side=TOP, padx=5, pady=50)
+
+    # buttons
+    quit_button = Button(window, text='Quit', style='red.TButton', command=window.destroy)
+    quit_button.pack(side=BOTTOM, padx=5, pady=5)
+    yes_button = Button(window, text="Yes", command=yes)
+    yes_button.place(x=205, y=165)
+    no_button = Button(window, text="No", command=no)
+    no_button.place(x=205, y=205)
+    idk_button = Button(window, text="I don't know", command=idk)
+    idk_button.place(x=185, y=245)
+
+    # stop execution
+    window.mainloop()
 
 
 if __name__ == '__main__':
-    console_main()
+    main()

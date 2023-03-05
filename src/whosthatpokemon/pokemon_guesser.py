@@ -12,6 +12,13 @@ class PokemonGuesser:
                  perm_rules_file='../../data/pokemon_perm_rules_kb.txt'):
         self.KB = KnowledgeBase([], [], [])
 
+        self.predicate_difficulty_categories = {
+            'easy': ['wasIntroducedIn', 'isLegendary', 'canEvolve', 'isAshOwned',
+                     'isPrimaryColor', 'isType', 'evolvesFrom'],
+            'ok': ['isColor', 'itHasHeight', 'itHasWeight', 'hasShape'],
+            'hard': ['howEffective', 'isGenus'],
+        }
+
         # Assert starter rules
         data = read.read_tokenize(kb_file)
         for item in data:
@@ -35,13 +42,6 @@ class PokemonGuesser:
         """
         # todo - choose statements better
 
-        predicate_difficulty_categories = {
-            'easy': ['wasIntroducedIn', 'isLegendary', 'canEvolve', 'isAshOwned',
-                     'isPrimaryColor', 'isType', 'evolvesFrom'],
-            'ok': ['isColor', 'itHasHeight', 'itHasWeight', 'hasShape'],
-            'hard': ['howEffective', 'isGenus'],
-        }
-
         all_statements = {}
         for rule in self.KB.rules:
             if rule in self.KB.permanent_rules:
@@ -51,15 +51,15 @@ class PokemonGuesser:
                     all_statements[statement] = 0
                 all_statements[statement] += 1
 
-        best_statement = self.get_best_splitting_statement(all_statements, predicate_difficulty_categories['easy'])
+        best_statement = self.get_best_splitting_statement(all_statements, self.predicate_difficulty_categories['easy'])
         if best_statement is not None:
             return best_statement
 
-        best_statement = self.get_best_splitting_statement(all_statements, predicate_difficulty_categories['ok'])
+        best_statement = self.get_best_splitting_statement(all_statements, self.predicate_difficulty_categories['ok'])
         if best_statement is not None:
             return best_statement
 
-        best_statement = self.get_best_splitting_statement(all_statements, predicate_difficulty_categories['hard'])
+        best_statement = self.get_best_splitting_statement(all_statements, self.predicate_difficulty_categories['hard'])
 
         return best_statement
 
@@ -103,3 +103,13 @@ class PokemonGuesser:
         if not answer:
             question_statement = Statement(['~' + question_statement.predicate] + question_statement.terms)
         self.KB.kb_add(Fact(question_statement))
+
+    def remove_ambiguous_predicate(self, question_statement: Statement):
+        """
+        Remove predicate from difficulty list if user does not know the answer.
+
+        """
+        predicate = question_statement.predicate
+        for k, v in self.predicate_difficulty_categories.items():
+            if predicate in v:
+                v = v.remove(predicate)
