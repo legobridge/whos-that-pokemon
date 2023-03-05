@@ -85,10 +85,10 @@ def get_feature_and_value_from_statement(statement):
 
 def get_attack_question(attack_type, effectiveness):
     if effectiveness == "super_effective":
-        return f"Is {attack_type} attack super effective against the Pokemon?"
+        return f"Are {attack_type}-type attacks super effective against the Pokemon?"
     elif effectiveness == "not_very_effective":
-        return f"Is {attack_type} attack not very effective against the Pokemon?"
+        return f"Are {attack_type}-type attacks not very effective against the Pokemon?"
     elif effectiveness == "has_no_effect":
-        return f"Does a/an {attack_type} attack has no effect against the Pokemon?"
+        return f"Do {attack_type}-type attacks have no effect against the Pokemon?"
     else:
         return None
