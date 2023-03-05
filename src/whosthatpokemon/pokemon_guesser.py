@@ -2,6 +2,7 @@ from src.knowledgebase import read
 from src.knowledgebase.kb import KnowledgeBase
 from src.knowledgebase.logical_classes import *
 
+import random
 
 class PokemonGuesser:
 
@@ -13,9 +14,9 @@ class PokemonGuesser:
         self.predicate_difficulty_categories = {
             'super_easy': ['isFirstLetter'],
             'easy': ['wasIntroducedIn', 'isLegendary', 'canEvolve', 'isAshOwned',
-                     'isPrimaryColor', 'isType', 'evolvesFromSomething'],
-            'ok': ['isColor', 'itHasHeight', 'itWeighs', 'hasShape'],
-            'hard': ['howEffective', 'isGenus'],
+                     'isPrimaryColor', 'isType', 'evolvesFromSomething', 'itHasHeight',
+                     'itWeighs', 'hasShape', 'isColor'],
+            'hard': ['howEffective', 'isGenus']
         }
 
         # Assert starter rules
@@ -54,10 +55,6 @@ class PokemonGuesser:
         if best_statement is not None:
             return best_statement
 
-        best_statement = self.get_best_splitting_statement(all_statements, self.predicate_difficulty_categories['ok'])
-        if best_statement is not None:
-            return best_statement
-
         best_statement = self.get_best_splitting_statement(all_statements, self.predicate_difficulty_categories['hard'])
         if best_statement is not None:
             return best_statement
@@ -66,17 +63,17 @@ class PokemonGuesser:
 
         return best_statement
 
-    def get_best_splitting_statement(self, all_statements, predicates_to_choose_from):
+    def get_best_splitting_statement(self, all_statements, predicates_to_choose_from, pick_from_top=5):
         pokemon_rules_left = len(self.KB.rules) - len(self.KB.permanent_rules)
-        best_statement = None
-        lowest_split_error = 10000000
+        statements_with_split_error = []
         for statement, frequency in all_statements.items():
             if statement.predicate in predicates_to_choose_from:
                 split_error = abs(0.5 - (frequency / pokemon_rules_left))
-                if best_statement is None or split_error < lowest_split_error:
-                    best_statement = statement
-                    lowest_split_error = split_error
-        return best_statement
+                statements_with_split_error.append((split_error, statement))
+        sorted_statements = [x[1] for x in sorted(statements_with_split_error, key=lambda x: x[0])]
+        if len(sorted_statements) == 0:
+            return None
+        return sorted_statements[random.randint(0, min(pick_from_top, len(sorted_statements)) - 1)]
 
     def return_pokemon_if_found(self):
         """
