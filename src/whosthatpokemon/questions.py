@@ -7,39 +7,44 @@ def get_question_from_statement(statement):
              and 0 or 1 terms (Red, for the predicate isColor)
     :return: a string, the natural language question
     """
-    
 
     feature, value = get_feature_and_value_from_statement(statement)
     if feature == 'isColor':
         return f'Is the Pokemon {value} in color?'
-    if feature == 'isLegendary':
+    elif feature == 'isLegendary':
         return f'Is it a legendary Pokemon?'
-    if feature == 'canEvolve':
+    elif feature == 'canEvolve':
         return f'Can the Pokemon evolve into another Pokemon?'
-    if feature == 'isPrimaryColor':
+    elif feature == 'isPrimaryColor':
         return f'Is the main color of the Pokemon a primary color?'
-    if feature == 'wasIntroducedIn':
-        return f'Was the Pokemon introduced in {value}?' 
-    if feature == 'howEffective':
-        effectiveness = statement.predicate  
-        attack_type = statement.terms[0] 
-        get_attack_question(attack_type, effectiveness) 
-    if feature == 'isAshOwned':
+    elif feature == 'wasIntroducedIn':
+        return f'Was the Pokemon introduced in {value}?'
+    elif feature == 'howEffective':
+        effectiveness = statement.predicate
+        attack_type = statement.terms[0]
+        get_attack_question(attack_type, effectiveness)
+    elif feature == 'isAshOwned':
         return f'Is the Pokemon owned by Ash?'
-    if feature == 'isGenus':
-        return f'Does the Pokemon belong to the {value} genus?'     
-    if feature == 'isType':
+    elif feature == 'isGenus':
+        return f'Does the Pokemon belong to the {value} genus?'
+    elif feature == 'isType':
         return f'Is it a/an {value} type Pokemon?'
-    if feature == 'itWeighs':
-        return f'Does the Pokemon weigh {value}?'
-    if feature == 'itHasHeight':
-        return f'Is the Pokemon {value} in height?'
-    if feature == 'evolvesFrom':
-        return f'Does the Pokemon evolve from {value}?'
-    if feature == 'hasShape':
-        if value  == 'Quadruped':
+    elif feature == 'itWeighs':
+        if value == 'veryLight':
+            return 'Is it a very lightweight Pokemon?'
+        elif value == 'veryHeavy':
+            return 'Is it a very heavyweight Pokemon?'
+    elif feature == 'itHasHeight':
+        if value == 'veryShort':
+            return 'Is it a very short Pokemon?'
+        elif value == 'veryTall':
+            return 'Is it a very big Pokemon?'
+    elif feature == 'evolvesFromSomething':
+        return f'Does the Pokemon evolve from another Pokemon?'
+    elif feature == 'hasShape':
+        if value == 'Quadruped':
             return f'Does the Pokemon have four legs?'
-        elif value  == 'Upright':
+        elif value == 'Upright':
             return f'Does the Pokemon have two legs and a tail?'
         elif value == 'Armor':
             return f'Does the Pokemon have an insectoid body and hard shell?'
@@ -55,7 +60,7 @@ def get_question_from_statement(statement):
             return f'Does the Pokemon have two legs and no arms?'
         elif value == 'Blob':
             return f'Is the Pokemon Blob shaped?'
-        elif value  == 'Heads':
+        elif value == 'Heads':
             return f'Does the Pokemon have multiple bodies?'
         elif value == 'Tentacles':
             return f'Does the Pokemon have tentacles?'
@@ -67,15 +72,16 @@ def get_question_from_statement(statement):
             return f'Is the Pokemon ball-shaped with no arms?'
 
     return statement
-    
+
 
 def get_feature_and_value_from_statement(statement):
     feature = statement.predicate
     if len(statement.terms) == 0:
         value = None
     else:
-        value = statement.terms[0]
+        value = str(statement.terms[0])
     return feature, value
+
 
 def get_attack_question(attack_type, effectiveness):
     if effectiveness == "super_effective":
@@ -86,6 +92,3 @@ def get_attack_question(attack_type, effectiveness):
         return f"Does a/an {attack_type} attack has no effect against the Pokemon?"
     else:
         return None
-
-
-
