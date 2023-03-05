@@ -59,7 +59,7 @@ def main():
         if pokemon_name is None:
             end('Sorry! No Pokemon matches those features.')
         elif pokemon_name:
-            end(f'Maybe you were thinking of... {pokemon_name.upper()}?')
+            end(f'Maybe you were thinking of... {pokemon_name}?')
             img2 = Image.open('../../data/pokemon_images/'+pokemon_name.lower()+'.png')
             resized_img2 = img2.resize((350, 350), Image.LANCZOS)
             img2 = ImageTk.PhotoImage(resized_img2)
