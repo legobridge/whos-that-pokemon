@@ -6,7 +6,7 @@ from src.knowledgebase.logical_classes import *
 class PokemonGuesser:
 
     def __init__(self,
-                 kb_file='../../data/pokemon_kb.txt',
+                 kb_file='../../data/rules_generated.txt',
                  perm_rules_file='../../data/pokemon_perm_rules_kb.txt'):
         self.KB = KnowledgeBase([], [], [])
 
