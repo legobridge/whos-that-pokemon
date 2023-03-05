@@ -36,34 +36,34 @@ def get_question_from_statement(statement):
         return f'Is the Pokemon {value} in height?'
     if feature == 'evolvesFrom':
         return f'Does the Pokemon evolve from {value}?'
-    if feature =='hasShape':
-        if {value} == 'Quadruped':
+    if feature == 'hasShape':
+        if value  == 'Quadruped':
             return f'Does the Pokemon have four legs?'
-        elif {value} == 'Upright':
+        elif value  == 'Upright':
             return f'Does the Pokemon have two legs and a tail?'
-        elif {value}== 'Armor':
+        elif value == 'Armor':
             return f'Does the Pokemon have an insectoid body and hard shell?'
-        elif {value}== 'Squiggle':
+        elif value == 'Squiggle':
             return f'Is the Pokemon serpentine (snake-like)?'
-        elif {value}== 'Bug-Wings':
+        elif value == 'Bug-Wings':
             return f'Does the Pokemon have wings and an insectoid body?'
-        elif {value}== 'Wings':
+        elif value == 'Wings':
             return f'Does the Pokemon have wings?'
-        elif {value}== 'Humanoid':
+        elif value == 'Humanoid':
             return f'Is the Pokemon humanoid shaped with two legs and no tail?'
-        elif {value}== 'Legs':
+        elif value == 'Legs':
             return f'Does the Pokemon have two legs and no arms?'
-        elif {value}== 'Blob':
+        elif value == 'Blob':
             return f'Is the Pokemon Blob shaped?'
-        elif {value} == 'Heads':
+        elif value  == 'Heads':
             return f'Does the Pokemon have multiple bodies?'
-        elif {value}=='Tentacles':
+        elif value == 'Tentacles':
             return f'Does the Pokemon have tentacles?'
-        elif {value}== 'Arms':
+        elif value == 'Arms':
             return f'Does the Pokemon only has one head and arms?'
-        elif {value}== 'Fish':
+        elif value == 'Fish':
             return f'Does the Pokemon have fins?'
-        elif {value}== 'Ball':
+        elif value == 'Ball':
             return f'Is the Pokemon ball-shaped with no arms?'
 
     return statement
