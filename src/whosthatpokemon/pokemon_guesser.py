@@ -4,6 +4,7 @@ from src.knowledgebase.logical_classes import *
 
 import random
 
+
 class PokemonGuesser:
 
     def __init__(self,
