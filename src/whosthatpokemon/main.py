@@ -76,7 +76,7 @@ def main():
     # create a window and background image
     window = Tk()
     style = Style()
-    style.configure('TButton', font=('helvetica', 14, 'bold'), foreground='#2a75bb', highlightbackground='#ffcb05', relief='RAISED')
+    style.configure('TButton', font=('helvetica', 14, 'bold'), foreground='#ffffff', highlightbackground='#ffcb05', relief='raised')
     style.configure('red.TButton', foreground='red')
     img1 = PhotoImage(file='../../data/pokemon.gif')
     bg = Label(window, image=img1)
@@ -87,7 +87,7 @@ def main():
     # text to display questions
     display = StringVar()
     refresh_question()  # begin
-    question_textbox = Label(window, textvariable=display, fg='#ffcb05', bg='#2a75bb', font=('Comic Sans MS', 20, 'bold'))
+    question_textbox = Label(window, textvariable=display, fg='#ffcb05', bg='#2a75bb', font=('Comic Sans MS', 20, 'bold'), relief='raised')
     question_textbox.pack(side=TOP, padx=5, pady=50)
 
     # buttons
