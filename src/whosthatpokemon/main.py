@@ -78,7 +78,7 @@ def main():
     #style = Style()
     #style.configure('TButton', font=('helvetica', 14, 'bold'), foreground='#ffcb05', background='#2a75bb', relief='raised')
     #style.configure('red.TButton', foreground='red')
-    img1 = PhotoImage(file='../../data/pokemon.gif')
+    img1 = PhotoImage(file='../../data/pokemon_desaturated.gif')
     bg = Label(window, image=img1)
     bg.place(x=0, y=0, relwidth=1, relheight=1)
     window.title("WHO'S THAT POKEMON?")
