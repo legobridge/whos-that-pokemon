@@ -1,6 +1,5 @@
 import unittest
 import read
-from logical_classes import *
 from kb import KnowledgeBase
 
 
@@ -9,19 +8,19 @@ class KBTest(unittest.TestCase):
     def setUp(self):
         self.KB = KnowledgeBase([], [], [])
 
-        # Assert starter rules
         kb_file = '../../data/pokemon_test_kb.txt'
+        perm_rules_file = '../../data/pokemon_perm_rules_kb.txt'
+
+        # Assert starter rules
         data = read.read_tokenize(kb_file)
         for item in data:
-            if isinstance(item, Fact) or isinstance(item, Rule):
-                self.KB.kb_assert(item)
+            self.KB.kb_assert(item)
 
-        perm_rules_file = '../../data/pokemon_perm_rules_kb.txt'
+        # Assert permanent rules
         perm_rule_data = read.read_tokenize(perm_rules_file)
         for perm_rule in perm_rule_data:
-            if isinstance(perm_rule, Rule):
-                self.KB.kb_assert(perm_rule)
-                self.KB.permanent_rules.append(perm_rule)
+            self.KB.kb_assert(perm_rule)
+            self.KB.permanent_rules.append(perm_rule)
 
     def test1(self):
 
