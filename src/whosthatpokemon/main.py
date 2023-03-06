@@ -82,7 +82,7 @@ def main():
     bg = Label(window, image=img1)
     bg.place(x=0, y=0, relwidth=1, relheight=1)
     window.title("WHO'S THAT POKEMON?")
-    window.geometry('500x500+400+400')
+    window.geometry('600x500+550+200')
 
     # text to display questions
     display = StringVar()
@@ -94,11 +94,11 @@ def main():
     quit_button = Button(window, text='Quit', style='red.TButton', command=window.destroy)
     quit_button.pack(side=BOTTOM, padx=5, pady=5)
     yes_button = Button(window, text="Yes", command=yes)
-    yes_button.place(x=205, y=165)
+    yes_button.place(x=255, y=165)
     no_button = Button(window, text="No", command=no)
-    no_button.place(x=205, y=205)
+    no_button.place(x=255, y=205)
     idk_button = Button(window, text="I don't know", command=idk)
-    idk_button.place(x=185, y=245)
+    idk_button.place(x=235, y=245)
 
     # stop execution
     window.mainloop()
