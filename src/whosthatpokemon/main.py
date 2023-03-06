@@ -75,8 +75,8 @@ def main():
 
     # create a window and background image
     window = Tk()
-    style = Style()
-    style.configure('TButton', font=('helvetica', 14, 'bold'), foreground='#ffcb05', background='#2a75bb', relief='raised')
+    #style = Style()
+    #style.configure('TButton', font=('helvetica', 14, 'bold'), foreground='#ffcb05', background='#2a75bb', relief='raised')
     #style.configure('red.TButton', foreground='red')
     img1 = PhotoImage(file='../../data/pokemon.gif')
     bg = Label(window, image=img1)
@@ -92,13 +92,17 @@ def main():
 
     # buttons
     button_font = ('Comic Sans MS', 14, 'bold')
-    quit_button = Button(window, text='Quit', command=window.destroy, foreground='#ffcb05', background='black', activebackground='red', overbackground='red',overforeground='white', font=button_font, relief='raised')
+    quit_button = Button(window, text='Quit', command=window.destroy, foreground='#ffcb05', background='black', activebackground='red',
+                         overbackground='red',overforeground='white', font=button_font, relief='raised')
     quit_button.pack(side=BOTTOM, padx=5, pady=5)
-    yes_button = Button(window, text="Yes", command=yes, foreground='#ffcb05', background='#2a75bb', overbackground='blue',overforeground='white', font=button_font, relief='raised')
+    yes_button = Button(window, text="Yes", command=yes, foreground='#ffcb05', background='#2a75bb', overbackground='blue',
+                        overforeground='white', font=button_font, relief='raised')
     yes_button.place(x=295, y=165)
-    no_button = Button(window, text="No", command=no, foreground='#ffcb05', background='#2a75bb',overbackground='blue',overforeground='white', font=button_font, relief='raised')
+    no_button = Button(window, text="No", command=no, foreground='#ffcb05', background='#2a75bb', overbackground='blue',
+                       overforeground='white', font=button_font, relief='raised')
     no_button.place(x=295, y=205)
-    idk_button = Button(window, text="I don't know", command=idk, foreground='#ffcb05', background='#2a75bb',overbackground='blue',overforeground='white', font=button_font, relief='raised')
+    idk_button = Button(window, text="I don't know", command=idk, foreground='#ffcb05', background='#2a75bb', overbackground='blue',
+                        overforeground='white', font=button_font, relief='raised')
     idk_button.place(x=275, y=245)
 
     # stop execution
