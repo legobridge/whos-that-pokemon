@@ -8,8 +8,8 @@ class KBTest(unittest.TestCase):
     def setUp(self):
         self.KB = KnowledgeBase([], [], [])
 
-        kb_file = '../../data/pokemon_test_kb.txt'
-        perm_rules_file = '../../data/pokemon_perm_rules_kb.txt'
+        kb_file = 'data/pokemon_test_kb.txt'
+        perm_rules_file = 'data/pokemon_perm_rules_kb.txt'
 
         # Assert starter rules
         data = read.read_tokenize(kb_file)

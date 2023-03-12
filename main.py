@@ -1,9 +1,8 @@
-from pokemon_guesser import *
+from src.whosthatpokemon.pokemon_guesser import *
 from tkinter import *
-from tkinter.ttk import Style
-from questions import *
+from src.whosthatpokemon.questions import *
 from PIL import Image, ImageTk
-from tkmacosx import Button
+
 
 def main():
     USER_CHOICE = False
@@ -60,7 +59,7 @@ def main():
             end('Sorry! No Pokemon matches those features.')
         elif pokemon_name:
             end(f'Maybe you were thinking of... {pokemon_name}?')
-            img2 = Image.open('../../data/pokemon_images/'+pokemon_name.lower()+'.png')
+            img2 = Image.open('data/pokemon_images/'+pokemon_name.lower()+'.png')
             resized_img2 = img2.resize((350, 350), Image.LANCZOS)
             img2 = ImageTk.PhotoImage(resized_img2)
             bg.configure(image=img2)
@@ -78,7 +77,7 @@ def main():
     #style = Style()
     #style.configure('TButton', font=('helvetica', 14, 'bold'), foreground='#ffcb05', background='#2a75bb', relief='raised')
     #style.configure('red.TButton', foreground='red')
-    img1 = PhotoImage(file='../../data/pokemon_desaturated.gif')
+    img1 = PhotoImage(file='data/pokemon_desaturated.gif')
     bg = Label(window, image=img1)
     bg.place(x=0, y=0, relwidth=1, relheight=1)
     window.title("WHO'S THAT POKEMON?")
@@ -91,19 +90,20 @@ def main():
     question_textbox.pack(side=TOP, padx=5, pady=50)
 
     # buttons
-    button_font = ('Comic Sans MS', 14, 'bold')
-    quit_button = Button(window, text='Quit', command=window.destroy, foreground='#ffcb05', background='black', activebackground='red',
-                         overbackground='red',overforeground='white', font=button_font, relief='raised')
-    quit_button.pack(side=BOTTOM, padx=5, pady=5)
-    yes_button = Button(window, text="Yes", command=yes, foreground='#ffcb05', background='#2a75bb', overbackground='blue',
-                        overforeground='white', font=button_font, relief='raised')
-    yes_button.place(x=295, y=165)
-    no_button = Button(window, text="No", command=no, foreground='#ffcb05', background='#2a75bb', overbackground='blue',
-                       overforeground='white', font=button_font, relief='raised')
-    no_button.place(x=295, y=205)
-    idk_button = Button(window, text="I don't know", command=idk, foreground='#ffcb05', background='#2a75bb', overbackground='blue',
-                        overforeground='white', font=button_font, relief='raised')
-    idk_button.place(x=275, y=245)
+    button_font = ('Arial', 15, 'bold')
+    button_text_color = '#125fdb'
+    yes_button = Button(window, text="Yes", command=yes, foreground=button_text_color,
+                        font=button_font, relief='raised')
+    yes_button.pack(side=TOP, padx=5, pady=(50, 10))
+    no_button = Button(window, text="No", command=no, foreground=button_text_color,
+                       font=button_font, relief='raised')
+    no_button.pack(side=TOP, padx=5, pady=10)
+    idk_button = Button(window, text="I don't know", command=idk, foreground=button_text_color,
+                        font=button_font, relief='raised')
+    idk_button.pack(side=TOP, padx=5, pady=10)
+    quit_button = Button(window, text='Quit', command=window.destroy, foreground=button_text_color,
+                         activebackground='red', font=button_font, relief='raised')
+    quit_button.pack(side=BOTTOM, padx=5, pady=15)
 
     # stop execution
     window.mainloop()

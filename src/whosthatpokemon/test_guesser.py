@@ -8,7 +8,7 @@ from src.knowledgebase.logical_classes import Statement, Term
 class KBTest(unittest.TestCase):
 
     def setUp(self):
-        self.pg = PokemonGuesser(kb_file='../../data/pokemon_test_kb.txt')
+        self.pg = PokemonGuesser(kb_file='data/pokemon_test_kb.txt')
 
     def test1(self):
         # A random statement should be generated

@@ -8,8 +8,8 @@ import random
 class PokemonGuesser:
 
     def __init__(self,
-                 kb_file='../../data/rules_generated.txt',
-                 perm_rules_file='../../data/pokemon_perm_rules_kb.txt'):
+                 kb_file='data/rules_generated.txt',
+                 perm_rules_file='data/pokemon_perm_rules_kb.txt'):
         self.KB = KnowledgeBase([], [], [])
 
         self.predicate_difficulty_categories = {
