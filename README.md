@@ -12,7 +12,11 @@ More details about the project can be found in the file named **Project Report.p
 
 ## Execution Instructions
 
-The game runs in pure Python (tested for Python versions 3.7 - 3.10), and requires no additional libraries to be installed.
+The game runs in pure Python (tested for Python versions 3.7 - 3.10), and requires only the pillow library to be installed:
+
+```commandline
+pip install pillow
+```
 
 All that is required is for the root directory of the project to be in the PYTHONPATH environment variable.
 
